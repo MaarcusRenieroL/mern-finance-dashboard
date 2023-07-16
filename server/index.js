@@ -7,8 +7,12 @@ import helmet from "helmet"
 import morgan from "morgan"
 
 import kpiRoutes from "./routes/kpi.js";
+import productRoutes from "./routes/product.js";
+
 import KeyPerformanceIndicators from "./models/KeyPerformanceIndicators.js";
-import { kpis } from "./data/data.js";
+import Product from "./models/Product.js";
+import { kpis, products } from "./data/data.js";
+import Products from "./models/Product.js";
 
 // CONFIGURATIONS
 
@@ -28,6 +32,7 @@ app.use(cors())
 // ROUTES
 
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
 
 // MONGOOSE SETUP
 
@@ -39,7 +44,6 @@ mongoose.connect(process.env.MONGODB_URL, {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
-
 
 }).catch((err) => {
     console.log(err);
