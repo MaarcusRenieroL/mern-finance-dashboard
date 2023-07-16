@@ -53,7 +53,7 @@ const gridTemplateSmallScreens = `
 const Dashboard = () => {
 
     const isAboveMediumScreens = useMediaQuery("(min-width: 1000px)");
-    const {palette} = useTheme();
+    const { palette } = useTheme();
 
     return (
         <Box width={"100%"} height={"100%"} display={"grid"} gap={"1.5rem"} sx={
